@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> GitHub-Issue Tracker</title>
+  
+ 
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+ 
+</head>
+
+<body class="h-full bg-white antialiased">
+
+  <div class="min-h-screen flex flex-col">
+    
+   
+
+    <main class="flex-grow flex items-start justify-center pt-10 sm:pt-14 md:pt-20 px-4">
+      
+      <div class="w-full max-w-[340px]">
+
+        
+        <div class="flex justify-center mb-6">
+        
+          <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-xs">
+            <img src="./assets/github-logo.png" alt="">
+          </div>
+        </div>
+
+        <div class="text-center mb-6">
+          <h1 class="text-2xl font-semibold text-gray-900">
+            Sign in to GitHub-Issue Tracker
+          </h1>
+        </div>
+
+        <!-- Login card -->
+        <div class="bg-white border border-github-border rounded-lg shadow-sm p-6">
+
+          <form class="space-y-5">
+
+            <!-- Username -->
+            <div>
+              <label for="login" class="block text-sm font-medium text-gray-700 mb-1.5">
+                Username 
+              </label>
+              <input 
+                type="text"
+                id="login"
+                name="login"
+                autocomplete="username"
+                class="block w-full px-3 py-2 border  rounded-md 
+                       text-sm "
+              />
+            </div>
+
+            <!-- Password -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="password" class="block text-sm font-medium text-gray-700">
+                  Password
+                </label>
+               
+              </div>
+              <input 
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                class="block w-full px-3 py-2 border border-github-border rounded-md 
+                       text-sm focus:border-github-blue focus:ring-1 focus:ring-github-blue"
+              />
+            </div>
+
+     <div >
+        <a class="grid grid-cols-3 sm:grid-cols-1 col-span-3" href="main.html">
+            
+        <button id="sign-in" class="btn btn-primary">Sign In</button>
+        
+        </a>
+    </div>
+
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
