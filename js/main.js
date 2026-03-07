@@ -26,6 +26,9 @@ const displayIssues=(issues)=>{
 
     for(const issue of issues  )
     {
+
+        const statusImg= issue.status==='open'? './assets/Open-Status.png' : './assets/Closed- Status .png'
+
         const card=document.createElement('div')
 
         card.innerHTML=`
@@ -33,7 +36,7 @@ const displayIssues=(issues)=>{
          <div id="card" class="card border border-black p-6 h-full">
 
             <div class="flex justify-between mb-4">
-                <img src="./assets/Open-Status.png" alt="">
+                <img src="${statusImg}" alt="">
 
                 <h2 id="priority" >${issue.priority}</h2>
             </div>
