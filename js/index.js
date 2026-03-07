@@ -1,13 +1,14 @@
 
 
 
-    const loginInput=document.getElementById('login');
+ const loginInput=document.getElementById('login');
+
     const passwordInput=document.getElementById('password');
-    const signInButton=document.getElementById('sign-in')
+    const accessButton=document.getElementById('sign-in')
 
    
 
-    signInButton.addEventListener('click', (event) => {
+    accessButton.addEventListener('click', (event) => {
         event.preventDefault()
 
         const username= loginInput.value.trim();
@@ -19,12 +20,18 @@
         }
 
         if (username ==="admin"&&password==="admin123") {
-            // Successful login → redirect
+            
             window.location.href = "main.html"
-        } else {
+        } else 
+            
+            {
             alert("Incorrect username or password")
-            // Optional: clear password field only
+            
             passwordInput.value= ""
             passwordInput.focus()
         }
+
+
+
+        
     });

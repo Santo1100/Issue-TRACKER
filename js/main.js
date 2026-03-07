@@ -73,7 +73,7 @@ const showFilteredIssues = (status) => {
     if (status==='open') {
         filteredIssues =allIssues.filter(issue => issue.status===  'open')
     }
-    else if (status=== 'closed') {
+    else if (status==='closed') {
         filteredIssues=allIssues.filter(issue => issue.status==='closed')
     }
 
@@ -84,7 +84,7 @@ const showFilteredIssues = (status) => {
 
 const activeBtn= (clickedBtn)=>{
    //button heilight
-   
+
     const buttons= document.querySelectorAll('#btn-container button')
 
     buttons.forEach(btn=>{
