@@ -68,26 +68,58 @@ const displayIssues=(issues)=>{
 }
 
 const showFilteredIssues = (status) => {
-    let filteredIssues = allIssues;
+    let filteredIssues = allIssues
 
-    if (status === 'open') {
-        filteredIssues = allIssues.filter(issue => issue.status === 'open');
+    if (status==='open') {
+        filteredIssues =allIssues.filter(issue => issue.status===  'open')
     }
-    else if (status === 'closed') {
-        filteredIssues = allIssues.filter(issue => issue.status === 'closed');
+    else if (status=== 'closed') {
+        filteredIssues=allIssues.filter(issue => issue.status==='closed')
     }
 
-    displayIssues(filteredIssues);
+    displayIssues(filteredIssues)
     
   
 };
 
+const activeBtn= (clickedBtn)=>{
+   //button heilight
+   
+    const buttons= document.querySelectorAll('#btn-container button')
 
- const buttons = document.querySelectorAll('#btn-container button');
+    buttons.forEach(btn=>{
 
-buttons[0].addEventListener('click', () => showFilteredIssues('all'));
-buttons[1].addEventListener('click', () => showFilteredIssues('open'));
-buttons[2].addEventListener('click', () => showFilteredIssues('closed'));
+        btn.classList.remove('btn-primary')
+        btn.classList.add('btn-outline')
+    })
+
+    buttons[clickedBtn].classList.add('btn-primary')
+    buttons[clickedBtn].classList.remove('btn-outline')
+
+}
+
+
+ const buttons= document.querySelectorAll('#btn-container button')
+
+buttons[0].addEventListener('click', () => {
+
+    showFilteredIssues('all')
+    activeBtn(0)
+});
+
+buttons[1].addEventListener('click', ()=> {
+
+ showFilteredIssues('open')
+  activeBtn(1)
+
+})
+buttons[2].addEventListener('click',()=>{
+
+showFilteredIssues('closed')
+
+ activeBtn(2)
+
+});
 
     
 
