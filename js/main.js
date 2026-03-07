@@ -19,6 +19,8 @@ const displayIssues=(issues)=>{
 
     const cardSection=document.getElementById('card-section')
 
+    
+
     cardSection.innerHTML='';
 
     const totalIssues=document.getElementById('total-issues')
@@ -46,10 +48,11 @@ const displayIssues=(issues)=>{
 
        
         const card=document.createElement('div')
+const borderTop= issue.status== 'closed'?'border-t-2 border-t-purple-500' :'border-t-2 border-t-green-400'
 
         card.innerHTML=`
         
-         <div id="card" class="card border border-black p-6 h-full">
+         <div id="card" class="card border border-black p-6 h-full ${borderTop }">
 
             <div class="flex justify-between mb-4">
                 <img src="${statusImg}" alt="">
