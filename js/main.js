@@ -1,5 +1,5 @@
 
-let allIssues= [];
+let allIssues= []
 
 
 
@@ -32,7 +32,8 @@ const displayIssues=(issues)=>{
         const statusImg= issue.status==='open'? './assets/Open-Status.png' : './assets/Closed- Status .png'
 
 
-        let labelsTag='';
+        let labelsTag=''
+
         if(issue.labels && issue.labels.length>0)
         {
             for(let label of issue.labels)
