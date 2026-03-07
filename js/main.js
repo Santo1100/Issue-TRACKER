@@ -29,6 +29,22 @@ const displayIssues=(issues)=>{
 
         const statusImg= issue.status==='open'? './assets/Open-Status.png' : './assets/Closed- Status .png'
 
+
+        let labelsTag='';
+        if(issue.labels && issue.labels.length>0)
+        {
+            for(let label of issue.labels)
+            {
+                labelsTag+=`<p class="bg-gray-200 bg-yellow-200 rounded">${label}</p>`
+            }
+        }
+
+
+        else{
+            labelsTag='<p class="text-gray-400">No labels</p>'
+        }
+
+       
         const card=document.createElement('div')
 
         card.innerHTML=`
@@ -48,9 +64,8 @@ const displayIssues=(issues)=>{
                 <p class="card-discription text-gray-400 line-clamp-3">${issue.description}</p>
             </div>
 
-            <div id="Level" class="flex  gap-4">
-                <p class="bg-red-400">BUG</p>
-                <p class="bg-yellow-200">help wanted</p>
+            <div id="Labels" class="flex  gap-4">
+               ${labelsTag}
             </div>
 
             <div class="text-gray-400 mt-2" >
