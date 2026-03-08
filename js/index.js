@@ -1,7 +1,7 @@
 
 
 
- const loginInput=document.getElementById('login');
+ const signinInput=document.getElementById('login');
 
     const passwordInput=document.getElementById('password');
     const accessButton=document.getElementById('sign-in')
@@ -11,11 +11,11 @@
     accessButton.addEventListener('click', (event) => {
         event.preventDefault()
 
-        const username= loginInput.value.trim();
+        const username= signinInput.value.trim();
         const password= passwordInput.value.trim()
 
-        if (!username || !password) {
-            alert("Please enter both username and password");
+        if (!username ||!password) {
+            alert("ey, enter both username and password");
             return;
         }
 
@@ -25,7 +25,7 @@
         } else 
             
             {
-            alert("Incorrect username or password")
+            alert("wrong username or password")
             
             passwordInput.value= ""
             passwordInput.focus()

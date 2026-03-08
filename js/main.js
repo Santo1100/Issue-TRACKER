@@ -1,3 +1,73 @@
+const manageSpinner=(status)=>{
+
+  
+
+}
+
+
+
+
+function Modal(id){
+
+fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+.then((res)=> res.json())
+.then((data)=> {
+
+const issue= data.data;
+
+document.getElementById('modalTitle').innerText=issue.title;
+
+document.getElementById('author').innerText =issue.author
+document.getElementById('date').innerText = issue.createdAt;
+
+document.getElementById('description').innerText = issue.description
+document.getElementById('assignee').innerText = issue.assignee
+document.getElementById('M-priority').innerText = issue.priority;
+
+
+const labelsContainer = document.getElementById('modal-labels');
+
+labelsContainer.innerHTML = '';
+
+if(issue.labels  &&issue.labels.length> 0){
+
+  for(const label of issue.labels){
+    labelsContainer.innerHTML += `
+      <p class="bg-yellow-300 px-2 rounded">${label}</p>
+    `
+  }
+
+}else{
+
+
+  labelsContainer.innerHTML= `
+
+
+  <p class="text-gray-400">No labels</p>
+  
+  
+  `
+}
+
+
+document.getElementById('issue-details-modal').showModal();
+
+
+
+})
+
+
+
+
+
+  
+}
+
+
+
+
+
+
 
 let allIssues= []
 
@@ -53,7 +123,7 @@ const borderTop= issue.status== 'closed'?'border-t-2 border-t-purple-500' :'bord
 
         card.innerHTML=`
         
-         <div id="card" class="card border border-black p-6 h-full ${borderTop }">
+         <div onclick="Modal(${issue.id})" id="card" class="card border border-black p-6 h-full ${borderTop }">
 
             <div class="flex justify-between mb-4">
                 <img src="${statusImg}" alt="">
