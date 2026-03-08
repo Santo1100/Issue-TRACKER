@@ -1,6 +1,15 @@
 const manageSpinner=(status)=>{
 
-  
+  const spinner= document.getElementById('spinner')
+
+  if(status===true)
+  {
+    spinner.classList.remove('hidden');
+  }else{
+   
+    spinner.classList.add('hidden');
+
+  }
 
 }
 
@@ -76,12 +85,19 @@ let allIssues= []
 
 const loadIssues=()=>{
 
+
+    manageSpinner(true)
     fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     .then((res)=>res.json())
     .then((data)=> {
 
-        allIssues = data.data || []
+        allIssues = data.data ||[]
         displayIssues(allIssues)
+
+        
+       
+        manageSpinner(false)
+
     })
 }
 
